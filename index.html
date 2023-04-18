@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/iconx.png">
+    <title>Tabuada Dinâmica</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Tabuada</h1>
+        <button onclick="" id="toggle-mode"><img src="img/botaox.jpg" alt=""></button>
+    </header>
+
+    <div class="tabuada">
+        <p>Digite um valor para gerar a tabuada:</p>
+
+        <div class="space">
+            <input type="text" name="" id="numero">
+            <button onclick="gerarTabuada()" class="button2">Gerar</button>
+        </div>
+        <table id="tabela-tabuada"></table>
+    </div>
+
+    <footer>
+        <div id="footer_content">
+            <div id="footer_contacts">
+                <img src="img/iconerodape.png" alt="logo" class="img-footer">
+                <p>Sued Duarte - Web Developer</p>
+
+                <div id="footer_social_media">
+                    <a href="https://instagram.com/sued_duarte" class="footer-link" id="instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="mailto:suedduarte57@gmail.com" class="footer-link" id="email">
+                        <i class="fa-regular fa-envelope"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/sued-duarte-4111a3270" class="footer-link" id="linkedin">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+
+                    <a href="https://github.com/suedduarte" class="footer-link" id="github">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </div>
+
+            </div>
+
+            <ul class="footer-list">
+                <li>
+                    <h3>+Projetos</h3>
+                </li>
+                <li>
+                    <a href="https://suedduarte.github.io/Carrossel3D/" class="footer-link">Carrossel 3D</a>
+                </li>
+
+                <li>
+                    <a href="https://suedduarte.github.io/parallax-duart-s-resenha/" class="footer-link">Parallax</a>
+                </li>
+
+                <li>
+                    <a href="https://suedduarte.github.io/hotsite-cres-a-com-o-ios/" class="footer-link">Hotsite</a>
+                </li>
+            </ul>
+
+            <ul class="footer-list">
+                <li>
+                    <h3>JavaScript</h3>
+                </li>
+                <li>
+                    <a href="https://suedduarte.github.io/clockjs/" class="footer-link">Relógio</a>
+                </li>
+
+                <li>
+                    <a href="https://suedduarte.github.io/calculator/" class="footer-link">Calculadora</a>
+                </li>
+
+                <li>
+                    <a href="https://suedduarte.github.io/soma-dom/" class="footer-link">Somador</a>
+                </li>
+            </ul>
+
+            <div id="footer_subscribe">
+                <h3>Sobre este site:</h3>
+
+                <p>
+                    Estrutura For/ While - Tabuada feita com HTML, CSS e Java Script.
+                </p>
+
+
+            </div>
+        </div>
+
+        <div id="footer_copyright">
+            &#169
+            2023 Sued Duarte
+        </div>
+    </footer>
+
+    <script>
+        const toggleBtn = document.getElementById('toggle-mode');
+        const body = document.body;
+
+        toggleBtn.addEventListener('click', function () {
+            body.classList.toggle("dark-mode")
+        })
+
+        function gerarTabuada() {
+            var numero = parseInt(document.getElementById('numero').value);
+            var tabela = document.getElementById('tabela-tabuada');
+
+            tabela.innerHTML = "" //para limpar a tabela antes de gerar a outra.
+
+            //gerar tabuada.
+            for (var i = 1; i <= 10; i++) {
+                var resultado = numero * i;
+                var linha = "<tr><td>" + numero + " x " + i + "</td><td>" + ' = ' + resultado + "</td></tr>";
+
+                tabela.innerHTML += linha
+            }
+        }
+    </script>
+
+</body>
+
+</html>
